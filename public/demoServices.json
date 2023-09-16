@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Cavity Protection",
+        "img": "https://i.ibb.co/TLm0K2M/cavety-protection.png",
+        "description": "Cavity protection refers to the preventive measures and dental care practices aimed at reducing the risk of tooth decay and the formation of dental cavities. This typically involves maintaining good oral hygiene through regular brushing and flossing, as well as limiting the consumption of sugary foods and drinks, which can contribute to the development of cavities. Additionally, fluoride treatments and dental sealants are often used to strengthen tooth enamel and create a protective barrier against harmful bacteria and acids that can lead to cavities. Cavity protection is an essential part of maintaining oral health and preventing dental issues."
+    },
+    {
+        "name": "Cosmetic dentistry",
+        "img": "https://i.ibb.co/FKDQf97/Cosmetic-Dentistry.jpg",
+        "description": "Cosmetic dentistry is a branch of dentistry focused on improving the appearance of a person's teeth, gums, and smile. It involves various procedures and treatments such as teeth whitening, veneers, dental bonding, and orthodontics (e.g., braces or clear aligners) to enhance the aesthetics of the teeth. Cosmetic dentists aim to create a more appealing and confident smile while also considering the functional aspects of oral health."
+    },
+    {
+        "name": "Oral Surgery",
+        "img": "https://i.ibb.co/yVHjBxF/oral-surgery.jpg",
+        "description": "Oral surgery is a specialized field of dentistry that involves surgical procedures performed on the mouth, jaw, and facial areas. It encompasses a wide range of treatments, including tooth extractions (including wisdom teeth), dental implant placement, corrective jaw surgery (orthognathic surgery), and treatment of oral diseases and injuries. Oral surgeons have extensive training and expertise in surgical techniques to address complex dental and facial conditions, often requiring anesthesia or sedation for patient comfort during procedures."
+    }
+]

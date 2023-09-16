@@ -1,8 +1,30 @@
 import { Link } from 'react-router-dom';
 import logo from '../../assets/logo.png'
+import { useEffect, useState } from 'react';
 const Navbar = () => {
+    const [navbarColor, setNavbarColor] = useState('bg-transparent');
+    const [textColor, setTextColor] = useState('text-white');
+
+
+    const handleScroll = () => {
+        if (window.scrollY > 0) {
+            setNavbarColor('bg-white');
+            setTextColor('text-black');
+        } else {
+            setNavbarColor('bg-transparent');
+            setTextColor('text-white');
+        }
+    };
+
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
     return (
-        <div className="navbar bg-base-100 fixed bg-transparent">
+        <div className={`navbar fixed ${navbarColor} z-50`}>
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -20,13 +42,13 @@ const Navbar = () => {
                         <li><a>Item 3</a></li>
                     </ul>
                 </div>
-                <Link to='/' className='flex items-center gap-[10px]'>
+                <Link to='/' className={`flex items-center gap-[10px] ${textColor}`}>
                     <img className='w-[61px] h-[61px]' src={logo} alt="" />
-                    <p className='text-[35px] font-bold text-[#fff]'><span className='text-[#F7A582] '>Doc</span> House</p>
+                    <p className='text-[35px] font-bold'><span className='text-[#F7A582] '>Doc</span> House</p>
                 </Link>
             </div>
             <div className="navbar-end hidden lg:flex">
-                <ul className="menu menu-horizontal px-1 text-white">
+                <ul className={`menu menu-horizontal px-1 ${textColor}`}>
                     <li>
                         <Link className='font-semibold text-lg' to='/'>Home</Link>
                     </li>
