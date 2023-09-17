@@ -1,9 +1,10 @@
 import { Rating } from "@smastrom/react-rating";
 import '@smastrom/react-rating/style.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCircleDollarToSlot, faDollar, faEnvelope, faLocationDot } from '@fortawesome/free-solid-svg-icons'
+import { faCircleDollarToSlot, faLocationDot } from '@fortawesome/free-solid-svg-icons'
 import { faCalendar } from "@fortawesome/free-regular-svg-icons";
-import { FaBeer, FaDollarSign } from 'react-icons/fa';
+import { useNavigate } from "react-router-dom";
+
 const StarDrawing = (
     <path
         d="M398.799,141.794c-43.394-3.977-86.776-6.52-130.158-8.418C258.835,99.302,242.633-4.751,193.173,0.169
@@ -21,6 +22,7 @@ const customStyles = {
 };
 const DoctorCard = ({ doctor }) => {
     console.log(doctor);
+    const navigate = useNavigate();
     const { _id, name, thumbnailImg, visit, designation, location, ratings } = doctor;
     return (
         <div className="text-[#6C6B6B] p-5 border border-[#E6E6E6] rounded-[10px] ">
@@ -48,7 +50,7 @@ const DoctorCard = ({ doctor }) => {
                 <FontAwesomeIcon className="me-5" icon={faCircleDollarToSlot} />
                 ${visit}
             </p>
-            <button className="text-xl font-bold py-[14px] rounded-[10px] border border-[#F7A582] hover:bg-[rgb(247,165,130)] w-full text-[#F7A582] hover:text-white mt-5">View Profile</button>
+            <button onClick={() => navigate(`/doctors/${_id}`)} className="text-xl font-bold py-[14px] rounded-[10px] border border-[#F7A582] hover:bg-[rgb(247,165,130)] w-full text-[#F7A582] hover:text-white mt-5">View Profile</button>
 
         </div>
     );
