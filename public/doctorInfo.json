@@ -1,0 +1,199 @@
+[
+    {
+        "name": "Karyen Anderson",
+        "img": "https://i.ibb.co/RC5m6cL/doctor-1.jpg",
+        "thumbnailImg": "https://i.ibb.co/BrVkwWZ/doc-thumb-1.png",
+        "visit": "25",
+        "designation": "BTP -  Senior Physiotherapist",
+        "ratings": 4.0,
+        "location": "Dhanmondi, Dhaka, Bangladesh",
+        "expertise": [
+            "Dental Filling",
+            "Teeth Whitening"
+        ],
+        "about": "Dr. Karyen Anderson is a highly respected senior physiotherapist known for her expertise and dedication to improving the lives of her patients through physical therapy. With over two decades of experience in the field, Dr. Anderson has become a trusted figure in the healthcare community. Her commitment to patient care and her passion for promoting well-being are evident in her professional journey.",
+        "Education": [
+            {
+                "institutionName": "American Dental Medical University",
+                "Degree": "BDS",
+                "passingYear": "1998-2003"
+            },
+            {
+                "institutionName": "American Dental Medical University",
+                "Degree": "BDS",
+                "passingYear": "1998-2003"
+            }
+        ],
+        "work": [
+            {
+                "hospitalName": "Glowing Smiles Family Dental Clinic",
+                "duration": "2010 - Present (5 years)"
+            },
+            {
+                "hospitalName": "Comfort Care Dental Clinic",
+                "duration": "2007 - 2010 (3 years)"
+            },
+            {
+                "hospitalName": "Dream Smile Dental Practice",
+                "duration": "2005 - 2007 (3 years)"
+            }
+        ],
+        "awards": [
+            {
+                "date": "July 2019",
+                "title": "Humanitarian Award",
+                "details": "The Humanitarian Award is typically granted to individuals or groups who have displayed outstanding compassion, selflessness, and dedication to improving the lives of others, often in the context of healthcare or humanitarian efforts."
+            },
+            {
+                "date": "March 2011",
+                "title": "Certificate for International Volunteer Service",
+                "details": "The Certificate for International Volunteer Service is typically awarded to individuals or organizations that have demonstrated exceptional commitment to volunteering their time and expertise to provide healthcare services, including dental care, to underserved populations in different countries."
+            },
+            {
+                "date": "March 2008",
+                "title": "The Dental Professional of The Year Award",
+                "details": "The Dental Professional of The Year Award is designed to recognize and honor outstanding dental professionals who have made significant contributions to the field of dentistry and have demonstrated exceptional dedication to patient care and community service."
+            }
+        ],
+        "services": [
+            "Tooth cleaning",
+            "Root Canal Therapy",
+            "Implants",
+            "Composite Bonding",
+            "Fissure Sealants",
+            "Surgical Extractions"
+        ],
+        "specializations": [
+            "Children Care",
+            "Dental Care",
+            "Oral and Maxillofacial Surgery",
+            "Orthodontist",
+            "Periodontist",
+            "Prosthodontics"
+        ]
+    },
+    {
+        "name": "Sarah Johnson",
+        "img": "https://i.ibb.co/60J378w/doctor-2.jpg",
+        "thumbnailImg": "https://i.ibb.co/SVc09kq/doc-thumb-2.png",
+        "visit": "20",
+        "designation": "MD - Pediatrician",
+        "ratings": 4.5,
+        "location": "Dhanmondi, Dhaka, Bangladesh",
+        "expertise": [
+            "Pediatric Care",
+            "Child Development"
+        ],
+        "about": "Dr. Sarah Johnson is a compassionate pediatrician with a focus on providing exceptional care to children and adolescents. With over 15 years of experience, she has become a trusted name in the field of pediatrics. Her commitment to the well-being of young patients and their families is at the core of her professional journey.",
+        "Education": [
+            {
+                "institutionName": "Harvard Medical School",
+                "Degree": "MD",
+                "passingYear": "2000-2005"
+            },
+            {
+                "institutionName": "Children's Hospital of New York",
+                "Degree": "Pediatric Residency",
+                "passingYear": "2005-2008"
+            }
+        ],
+        "work": [
+            {
+                "hospitalName": "Midtown Pediatrics",
+                "duration": "2008 - Present (15 years)"
+            },
+            {
+                "hospitalName": "Children's Wellness Center",
+                "duration": "2005 - 2008 (3 years)"
+            }
+        ],
+        "awards": [
+            {
+                "date": "November 2017",
+                "title": "Outstanding Pediatrician Award",
+                "details": "Recognized for her outstanding contributions to pediatric medicine and exceptional care for children and families."
+            },
+            {
+                "date": "June 2012",
+                "title": "Community Service Award",
+                "details": "Acknowledged for her dedicated community service initiatives, including health education and outreach programs."
+            }
+        ],
+        "services": [
+            "Wellness Exams",
+            "Vaccinations",
+            "Behavioral Assessments",
+            "Growth Monitoring",
+            "Childhood Nutrition",
+            "Developmental Screening"
+        ],
+        "specializations": [
+            "Pediatrics",
+            "Childhood Nutrition",
+            "Adolescent Medicine",
+            "Child Behavioral Health"
+        ]
+    },
+    {
+        "name": "David Mitchell",
+        "img": "https://i.ibb.co/mzVnvbL/doctor-3.jpg",
+        "thumbnailImg": "https://i.ibb.co/hKZQZMV/doc-thumb-3.png",
+        "visit": "15",
+        "designation": "DDS - Prosthodontist",
+        "ratings": 4.8,
+        "location": "Dhanmondi, Dhaka, Bangladesh.",
+        "expertise": [
+            "Prosthodontics",
+            "Dental Implants"
+        ],
+        "about": "Dr. David Mitchell is a renowned prosthodontist known for his exceptional skills in restorative dentistry. With a career spanning more than 20 years, he has established himself as a leading expert in creating beautiful and functional smiles. Dr. Mitchell is committed to delivering high-quality dental care to his patients.",
+        "Education": [
+            {
+                "institutionName": "University of California, Los Angeles",
+                "Degree": "DDS",
+                "passingYear": "1995-1999"
+            },
+            {
+                "institutionName": "American College of Prosthodontists",
+                "Degree": "Prosthodontics Residency",
+                "passingYear": "1999-2002"
+            }
+        ],
+        "work": [
+            {
+                "hospitalName": "Beverly Hills Prosthodontics",
+                "duration": "2002 - Present (21 years)"
+            },
+            {
+                "hospitalName": "Smile Restoration Clinic",
+                "duration": "1999 - 2002 (3 years)"
+            }
+        ],
+        "awards": [
+            {
+                "date": "March 2019",
+                "title": "Excellence in Prosthodontics Award",
+                "details": "Recognized for his outstanding contributions to the field of prosthodontics and his commitment to providing patients with beautiful, functional smiles."
+            },
+            {
+                "date": "October 2015",
+                "title": "Innovator in Restorative Dentistry",
+                "details": "Acknowledged for his innovative approaches to restorative dentistry and advancements in dental implant procedures."
+            }
+        ],
+        "services": [
+            "Dental Crowns",
+            "Dental Bridges",
+            "Dentures",
+            "Dental Implants",
+            "Full Mouth Reconstruction",
+            "Cosmetic Dentistry"
+        ],
+        "specializations": [
+            "Prosthodontics",
+            "Implant Dentistry",
+            "Restorative Dentistry",
+            "Cosmetic Dentistry"
+        ]
+    }
+]

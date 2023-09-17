@@ -1,5 +1,6 @@
 import Navbar from "../../../components/Shared/Navbar";
 import Banner from "../Banner/Banner";
+import Doctors from "../Doctors/Doctors";
 import Info from "../Info/Info";
 import Services from "../Services/Services";
 
@@ -10,6 +11,7 @@ const Home = () => {
             <Banner></Banner>
             <Services></Services>
             <Info></Info>
+            <Doctors></Doctors>
 
         </div>
     );
