@@ -58,6 +58,9 @@ const Navbar = () => {
                     <li>
                         <Link className='font-semibold text-lg' to='/appointment'>Appointment</Link>
                     </li>
+                    <li>
+                        <Link className='font-semibold text-lg' to='/login'>Login</Link>
+                    </li>
                 </ul>
             </div>
 

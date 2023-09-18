@@ -38,7 +38,7 @@ const DoctorDetails = () => {
     if (loading) {
         return <div className="flex items-center justify-center h-screen"><span className="loading loading-spinner loading-lg"></span></div>
     }
-    console.log(doctorDetails);
+    // console.log(doctorDetails);
     return (
         <div className="bg-[#F3F3F3]">
             <SectionCover
@@ -86,44 +86,44 @@ const DoctorDetails = () => {
             </div>
             <div className="w-[80%] mx-auto mt-[130px] flex rounded-[10px] text-[#6C6B6B]  gap-[30px] bg-white p-[35px]">
                 <div>
-                    <h3>About Me</h3>
-                    <p>{doctorDetails.about}</p>
+                    <h3 className="text-xl font-bold mb-[10px] text-[#3b3a3a] ">About Me</h3>
+                    <p className="leading-[26px] mb-[10px]">{doctorDetails.about}</p>
 
                     <div className="flex items-start">
                         <div className="flex-1">
-                            <h3>Education</h3>
+                            <h3 className="text-xl font-bold mb-[20px] text-[#3b3a3a]">Education</h3>
                             {
                                 doctorDetails.Education.map((item, index) => <div key={index}>
-                                    <li>{item.institutionName}</li>
+                                    <li className="text-xl font-bold mb-[10px] text-[#3b3a3a] ">{item.institutionName}</li>
                                     <p>{item.Degree}</p>
                                     <p>{item.passingYear}</p>
                                 </div>)
                             }
 
-                            <h3>Work & Experience</h3>
+                            <h3 className="text-xl font-bold my-[20px] text-[#3b3a3a] ">Work & Experience</h3>
                             {
                                 doctorDetails.work.map((item, index) =>
                                     <div key={index}>
-                                        <li>{item.hospitalName}</li>
+                                        <li className="text-xl font-bold mb-[10px] text-[#3b3a3a] ">{item.hospitalName}</li>
                                         <p>{item.duration}</p>
                                     </div>
                                 )
                             }
-                            <h3>Services</h3>
+                            <h3 className="text-xl font-bold mt-[20px] mb-[20px] text-[#3b3a3a] ">Services</h3>
                             {
                                 doctorDetails.services.map((item, index) => <li key={index}>{item}</li>)
                             }
                         </div>
                         <div className="flex-1">
-                            <h3>Awards</h3>
+                            <h3 className="text-xl font-bold  text-[#3b3a3a] ">Awards</h3>
                             {
                                 doctorDetails.awards.map((item, index) => <div key={index}>
-                                    <p>{item.date}</p>
-                                    <li>{item.title}</li>
+                                    <p className="my-[20px]">{item.date}</p>
+                                    <li className="text-xl font-bold mb-[10px] text-[#3b3a3a] ">{item.title}</li>
                                     <p>{item.details}</p>
                                 </div>)
                             }
-                            <h3>Specializations</h3>
+                            <h3 className="text-xl font-bold my-[20px] text-[#3b3a3a] ">Specializations</h3>
                             {
                                 doctorDetails.specializations.map((item, index) => <li key={index}>{item}</li>)
                             }
