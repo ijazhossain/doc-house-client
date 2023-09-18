@@ -5,7 +5,7 @@ import { Rating } from "@smastrom/react-rating";
 import '@smastrom/react-rating/style.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
-import { FaBeer, FaBehance, FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
+import { FaBehance, FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
 const StarDrawing = (
     <path
         d="M398.799,141.794c-43.394-3.977-86.776-6.52-130.158-8.418C258.835,99.302,242.633-4.751,193.173,0.169
@@ -24,15 +24,20 @@ const customStyles = {
 const DoctorDetails = () => {
     const { id } = useParams();
     const [doctorDetails, setDoctorDetails] = useState({})
-    // console.log(id);
+    const [loading, setLoading] = useState(true);
+    console.log(id);
+
     useEffect(() => {
         fetch(`http://localhost:5000/doctors/${id}`)
             .then(res => res.json())
             .then(data => {
-
                 setDoctorDetails(data);
+                setLoading(false);
             })
     }, [id])
+    if (loading) {
+        return <div className="flex items-center justify-center h-screen"><span className="loading loading-spinner loading-lg"></span></div>
+    }
     console.log(doctorDetails);
     return (
         <div className="bg-[#F3F3F3]">
@@ -74,8 +79,56 @@ const DoctorDetails = () => {
                             <FaBehance className="text-[20px] text-white"></FaBehance>
                         </div>
                     </div>
-                    <button className="border border-[#6C6B6B] px-[23px] py-[10px] rounded-[10px] text-xl font-semibold  me-[15px]">{doctorDetails.expertise[0]}</button>
-                    <button className="border border-[#6C6B6B] px-[23px] py-[10px] rounded-[10px] text-xl font-semibold mt-[20px]">{doctorDetails.expertise[1]}</button>
+                    <button className="border border-[#6C6B6B] px-[23px] py-[10px] rounded-[10px] text-xl font-semibold  me-[15px]">{doctorDetails?.expertise[0]}</button>
+                    <button className="border border-[#6C6B6B] px-[23px] py-[10px] rounded-[10px] text-xl font-semibold mt-[20px]">{doctorDetails?.expertise[1]}</button>
+                </div>
+
+            </div>
+            <div className="w-[80%] mx-auto mt-[130px] flex rounded-[10px] text-[#6C6B6B]  gap-[30px] bg-white p-[35px]">
+                <div>
+                    <h3>About Me</h3>
+                    <p>{doctorDetails.about}</p>
+
+                    <div className="flex items-start">
+                        <div className="flex-1">
+                            <h3>Education</h3>
+                            {
+                                doctorDetails.Education.map((item, index) => <div key={index}>
+                                    <li>{item.institutionName}</li>
+                                    <p>{item.Degree}</p>
+                                    <p>{item.passingYear}</p>
+                                </div>)
+                            }
+
+                            <h3>Work & Experience</h3>
+                            {
+                                doctorDetails.work.map((item, index) =>
+                                    <div key={index}>
+                                        <li>{item.hospitalName}</li>
+                                        <p>{item.duration}</p>
+                                    </div>
+                                )
+                            }
+                            <h3>Services</h3>
+                            {
+                                doctorDetails.services.map((item, index) => <li key={index}>{item}</li>)
+                            }
+                        </div>
+                        <div className="flex-1">
+                            <h3>Awards</h3>
+                            {
+                                doctorDetails.awards.map((item, index) => <div key={index}>
+                                    <p>{item.date}</p>
+                                    <li>{item.title}</li>
+                                    <p>{item.details}</p>
+                                </div>)
+                            }
+                            <h3>Specializations</h3>
+                            {
+                                doctorDetails.specializations.map((item, index) => <li key={index}>{item}</li>)
+                            }
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
