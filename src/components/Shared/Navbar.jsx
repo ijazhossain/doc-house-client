@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom';
 import logo from '../../assets/logo.png'
 import { useEffect, useState } from 'react';
+import useAuth from '../../Hooks/useAuth';
 const Navbar = () => {
+    const { user, logOut } = useAuth();
     const [navbarColor, setNavbarColor] = useState('bg-transparent');
     const [textColor, setTextColor] = useState('text-white');
 
@@ -15,7 +17,14 @@ const Navbar = () => {
             setTextColor('text-white');
         }
     };
+    const handleLogout = () => {
+        logOut()
+            .then(() => {
 
+            }).catch(error => {
+                console.log(error);
+            })
+    }
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
@@ -59,7 +68,7 @@ const Navbar = () => {
                         <Link className='font-semibold text-lg' to='/appointment'>Appointment</Link>
                     </li>
                     <li>
-                        <Link className='font-semibold text-lg' to='/login'>Login</Link>
+                        {user ? <Link onClick={handleLogout} className='font-semibold text-lg' to='/login'>Logout</Link> : <Link className='font-semibold text-lg' to='/login'>Login</Link>}
                     </li>
                 </ul>
             </div>

@@ -7,6 +7,7 @@ import Appointment from "../pages/Appointment/Appointment";
 import DoctorDetails from "../pages/Home/Doctors/DoctorDetails";
 import LoginLayout from "../Layouts/LoginLayout";
 import Login from "../pages/Login/Login";
+import Register from "../pages/Login/Register";
 
 export const router = createBrowserRouter([
     {
@@ -38,6 +39,17 @@ export const router = createBrowserRouter([
             {
                 path: '/login',
                 element: <Login></Login>
+            },
+
+        ]
+    },
+    {
+        path: '/register',
+        element: <LoginLayout></LoginLayout>,
+        children: [
+            {
+                path: '/register',
+                element: <Register></Register>
             }
         ]
     }
