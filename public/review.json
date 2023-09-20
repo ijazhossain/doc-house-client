@@ -1,0 +1,38 @@
+[
+    {
+        "name": "Sarah K.",
+        "designation": "Healthcare Administrator",
+        "rating": 5,
+        "comment": "I had the pleasure of finding the perfect doctor through this website. The detailed profiles and user-friendly interface made the process effortless. I couldn't be happier with the care I received!"
+    },
+    {
+        "name": "Michael R.",
+        "designation": "Parent",
+        "rating": 4,
+        "comment": "This site provided me with a wealth of information about various healthcare professionals. It helped me make an informed choice for my family's medical needs. Great resource!"
+    },
+    {
+        "name": "Emily L.",
+        "designation": "Healthcare Advocate",
+        "rating": 5,
+        "comment": "I stumbled upon this site while looking for a specialist. It's a goldmine of information! I found the ideal doctor who addressed my concerns with expertise and compassion."
+    },
+    {
+        "name": "John M.",
+        "designation": "IT Professional",
+        "rating": 4,
+        "comment": "A very useful platform for finding healthcare professionals. I appreciated the reviews and detailed profiles. It made the daunting task of choosing a doctor much easier."
+    },
+    {
+        "name": "Lisa G.",
+        "designation": "Small Business Owner",
+        "rating": 5,
+        "comment": "I found my dentist through this site, and the experience has been fantastic. The reviews gave me confidence, and the dentist exceeded my expectations. I highly recommend it!"
+    },
+    {
+        "name": "David W.",
+        "designation": "Retired Teacher",
+        "rating": 4,
+        "comment": "The site made it simple to explore different doctors and read about their backgrounds. It was a valuable tool in my search for a specialist. I'm grateful for the convenience."
+    }
+]
