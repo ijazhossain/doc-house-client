@@ -37,16 +37,16 @@ const Reviews = () => {
     };
 
     return (
-        <div className='w-[90%] mx-auto mb-[130px]'>
+        <div className='w-[90%] mx-auto'>
             <SectionTitle
                 title="Our Expert Doctors"
                 description="Our community of users, ranging from healthcare advocates and parents to IT professionals and small business owners, has shared their feedback to help you make informed decisions about your healthcare needs. Read on to discover the insights, ratings, and comments from individuals who have benefited from our platform."
             ></SectionTitle>
             <Swiper {...swiperSettings} className="mySwiper">
                 {reviews.map((item, index) => (
-                    <SwiperSlide className='' key={index}>
+                    <SwiperSlide key={index}>
                         <div
-                            className='w-[90%] mx-auto py-[50px] border border-[#E6E6E6] px-[50px] rounded-[10px] mb-[50px]'
+                            className='w-[90%] mx-auto py-[50px] border border-[#E6E6E6] px-[50px] rounded-[10px]'
                         >
                             <div className='flex items-center gap-6 mb-6'>
                                 <img src={item.img} alt="" />
