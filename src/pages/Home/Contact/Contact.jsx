@@ -8,7 +8,7 @@ const Contact = () => {
         e.preventDefault();
     }
     return (
-        <div className="w-[90%] bg-[#07332F] mx-auto text-white mt-[130px] rounded-[10px] p-[100px] flex items-center gap-8">
+        <div className="w-[90%] bg-[#07332F] mx-auto text-white my-[130px] rounded-[10px] p-[100px] flex items-center gap-8">
             <div className='w-[40%]'>
                 <h2 className='text-[40px] font-bold mb-5'>Contact With Us</h2>
                 <p className='mb-8 leading-[26px] text-justify'>Feel free to reach out to us with any questions, inquiries, or feedback. We are here to assist you and provide you with the information you need. Simply fill out the form below, and one of our representatives will get back to you as soon as possible. Your communication is important to us, and we look forward to hearing from you</p>

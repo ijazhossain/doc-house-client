@@ -1,4 +1,3 @@
-import Footer from "../../../components/Shared/Footer";
 import Banner from "../Banner/Banner";
 import Contact from "../Contact/Contact";
 import Doctors from "../Doctors/Doctors";
@@ -9,14 +8,12 @@ import Services from "../Services/Services";
 const Home = () => {
     return (
         <div>
-
             <Banner></Banner>
             <Services></Services>
             <Info></Info>
             <Reviews></Reviews>
             <Doctors></Doctors>
             <Contact></Contact>
-            <Footer></Footer>
         </div>
     );
 };

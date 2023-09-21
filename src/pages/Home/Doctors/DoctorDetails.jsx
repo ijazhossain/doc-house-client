@@ -45,7 +45,7 @@ const DoctorDetails = () => {
                 sectionTitle={"Home / Doctor Profile"}
                 sectionName={"Doctor Profile"}
             ></SectionCover>
-            <div className="w-[80%] mx-auto mt-[130px] flex rounded-[10px] text-[#6C6B6B]  gap-[30px] bg-white p-[35px]">
+            <div className="w-[80%] mx-auto mt-[130px] flex rounded-[10px] text-[#6C6B6B]  gap-[30px] bg-white p-[35px] ">
                 <div>
                     <img className="w-[358px] h-[365px]" src={doctorDetails.img} alt="" />
                 </div>
@@ -84,7 +84,7 @@ const DoctorDetails = () => {
                 </div>
 
             </div>
-            <div className="w-[80%] mx-auto mt-[130px] flex rounded-[10px] text-[#6C6B6B]  gap-[30px] bg-white p-[35px]">
+            <div className="w-[80%] mx-auto mt-[130px]  flex rounded-[10px] text-[#6C6B6B]  gap-[30px] bg-white p-[35px]">
                 <div>
                     <h3 className="text-xl font-bold mb-[10px] text-[#3b3a3a] ">About Me</h3>
                     <p className="leading-[26px] mb-[10px]">{doctorDetails.about}</p>

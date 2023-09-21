@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
 import logo from '../../assets/black-logo.png'
+import { FaBehance, FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
 const Footer = () => {
     const year = new Date().getFullYear()
     return (
         <div className="bg-[#F3F3F3] pt-[100px]">
-            <div className="w-[90%] mx-auto grid grid-cols-5 gap-[100px]">
-                <div className="col-span-2">
+            <div className="w-[90%] mx-auto lg:grid grid-cols-5 gap-[100px]">
+                <div className="lg:col-span-2">
 
                     <Link to='/' className={`flex items-center gap-[10px] `}>
                         <img className='w-[61px] h-[61px]' src={logo} alt="" />
@@ -15,7 +16,21 @@ const Footer = () => {
                     <p className="leading-[26px] my-[30px] text-justify text-[#3B3A3A]">
                         At Doc House, we value your connection with us. Keep up to date with the latest news, updates, and offers by following us on social media. Subscribe to our newsletter to receive exclusive content and special promotions directly to your inbox. We appreciate your continued support and look forward to serving you.
                     </p>
-                    <button className="text-xl font-bold py-[14px] rounded-[10px] border border-[#F7A582] hover:bg-[rgb(247,165,130)] w-full text-[#F7A582] hover:text-white mt-5">Appointment</button>
+                    <div className="flex gap-[12px] mt-[30px] mb-[25px]">
+                        <div className="bg-[#F7A582] p-3 rounded-full">
+                            <FaFacebookF className="text-[20px] text-white"></FaFacebookF>
+                        </div>
+                        <div className="bg-[#F7A582] p-3 rounded-full">
+                            <FaInstagram className="text-[20px] text-white"></FaInstagram>
+                        </div>
+                        <div className="bg-[#F7A582] p-3 rounded-full">
+                            <FaTwitter className="text-[20px] text-white"></FaTwitter>
+                        </div>
+                        <div className="bg-[#F7A582] p-3 rounded-full">
+                            <FaBehance className="text-[20px] text-white"></FaBehance>
+                        </div>
+                    </div>
+                    <button className="text-xl font-bold py-[14px] rounded-[10px] border border-[#F7A582] hover:bg-[rgb(247,165,130)] w-[160px] text-[#F7A582] hover:text-white mt-5">Appointment</button>
                 </div>
                 <ul className="flex flex-col gap-6 text-[#6C6B6B]">
                     <h3 className="text-[25px] font-bold">Quick Links</h3>
