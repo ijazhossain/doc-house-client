@@ -1,3 +1,4 @@
+import Footer from "../../../components/Shared/Footer";
 import Banner from "../Banner/Banner";
 import Contact from "../Contact/Contact";
 import Doctors from "../Doctors/Doctors";
@@ -15,7 +16,7 @@ const Home = () => {
             <Reviews></Reviews>
             <Doctors></Doctors>
             <Contact></Contact>
-
+            <Footer></Footer>
         </div>
     );
 };
