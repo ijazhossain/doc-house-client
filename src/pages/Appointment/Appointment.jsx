@@ -6,7 +6,6 @@ import BookingModal from "./BookingModal";
 const Appointment = () => {
     const [date, setDate] = useState(new Date());
     const [appointments, setAppointments] = useState([]);
-
     const [treatment, setTreatment] = useState({})
     useEffect(() => {
         fetch('http://localhost:5000/appointments')

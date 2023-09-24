@@ -8,6 +8,7 @@ import DoctorDetails from "../pages/Home/Doctors/DoctorDetails";
 import LoginLayout from "../Layouts/LoginLayout";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Login/Register";
+import PrivateRoutes from "./PrivateRoutes"
 
 export const router = createBrowserRouter([
     {
@@ -24,7 +25,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/appointment',
-                element: <Appointment></Appointment>
+                element: <PrivateRoutes><Appointment></Appointment></PrivateRoutes>
             },
             {
                 path: '/doctors/:id',

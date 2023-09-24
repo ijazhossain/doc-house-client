@@ -21,7 +21,7 @@ const customStyles = {
     inactiveFillColor: '#a1a1a1',
 };
 const DoctorCard = ({ doctor }) => {
-    console.log(doctor);
+    // console.log(doctor);
     const navigate = useNavigate();
     const { _id, name, thumbnailImg, visit, designation, location, ratings } = doctor;
     return (
