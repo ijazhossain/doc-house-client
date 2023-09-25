@@ -1,15 +1,42 @@
 import { format } from 'date-fns';
-const BookingModal = ({ treatment, date }) => {
+import useAuth from '../../Hooks/useAuth';
+import { toast } from 'react-toastify';
+const BookingModal = ({ treatment, date, setTreatment }) => {
+    const { user } = useAuth()
     // console.log(treatment.name);
-    const { name, slots } = treatment;
-    const selectedDate = format(date, 'PP');
+    const { _id, name, slots } = treatment;
+    const formattedDate = format(date, 'PP');
     const handleFormSubmit = (e) => {
         e.preventDefault();
         const form = e.target;
-        const name = form.name.value;
         const phone = form.phone.value;
-        const email = form.email.value;
-        console.log(name, phone, email);
+        const slot = form.slot.value
+        const bookings = {
+            treatmentId: _id,
+            treatment: name,
+            date: formattedDate,
+            slot,
+            patientName: user?.displayName,
+            patient: user?.email,
+            phone
+
+        }
+
+        fetch('http://localhost:5000/booking', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(bookings)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.insertedId) {
+                    setTreatment(null)
+                    toast('Your Booking has been confirmed')
+                }
+            })
 
     }
     return (
@@ -22,16 +49,16 @@ const BookingModal = ({ treatment, date }) => {
 
                 <h4 className="font-bold text-[28px] mb-[30px]">{name}</h4>
                 <form onSubmit={handleFormSubmit} className='flex flex-col gap-[23px]'>
-                    <input className='w-full border border-[#CFCFCF] py-[13px] px-[11px] rounded-[10px] bg-[#E6E6E6]' type="text" defaultValue={date} />
+                    <input className='w-full border border-[#CFCFCF] py-[13px] px-[11px] rounded-[10px] bg-[#E6E6E6]' type="text" defaultValue={date} readOnly />
                     <select name="slot" className='w-full border border-[#CFCFCF] py-[13px] px-[11px] rounded-[10px] bg-[#E6E6E6]'>
                         {slots?.map((slot, index) => <option
                             key={index}
                             defaultValue={slot}
                         >{slot}</option>)}
                     </select>
-                    <input name="name" className='w-full border border-[#CFCFCF] py-[13px] px-[11px] rounded-[10px] bg-[#E6E6E6]' type="text" placeholder="Full Name" />
+                    <input name="name" className='w-full border border-[#CFCFCF] py-[13px] px-[11px] rounded-[10px] bg-[#E6E6E6]' type="text" placeholder="Full Name" defaultValue={user?.displayName ? user?.displayName : ''} readOnly />
+                    <input name="email" className='w-full border border-[#CFCFCF] py-[13px] px-[11px] rounded-[10px] bg-[#E6E6E6]' type="email" placeholder="Email" defaultValue={user?.email ? user?.email : ''} readOnly />
                     <input name="phone" className='w-full border border-[#CFCFCF] py-[13px] px-[11px] rounded-[10px] bg-[#E6E6E6]' type="phone" placeholder="Phone Number" />
-                    <input name="email" className='w-full border border-[#CFCFCF] py-[13px] px-[11px] rounded-[10px] bg-[#E6E6E6]' type="email" placeholder="Email" />
                     <input className='w-full bg-[#07332F] text-[#D4D9E3] font-bold py-[13px] px-[11px] rounded-[10px]' type="submit" value="SUBMIT" />
                 </form>
 

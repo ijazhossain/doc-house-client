@@ -16,16 +16,18 @@ const AppointmentCard = ({ appointment, setTreatment }) => {
             <p className="mt-3">{slots.length}{slots.length > 1 ? ' spaces' : ' space'} available</p>
             <button
                 disabled={slots.length === 0}
-                onClick={() => {
-                    document.getElementById('my_modal_3').showModal();
-                    setTreatment(appointment)
-                }
+                onClick={
+
+                    async () => {
+                        await setTreatment(appointment);
+                        document.getElementById('my_modal_3').showModal();
+                    }
                 }
                 className="btn bg-[#F7A582] py-[15px] mt-[55px] px-[23px] text-white rounded-[10px] text-[14px] font-bold">
                 Book Appointment
             </button>
 
-        </div>
+        </div >
     );
 };
 

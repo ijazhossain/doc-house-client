@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import coverImg from '../../assets/login.png'
 import { useForm } from "react-hook-form";
 import useAuth from '../../Hooks/useAuth';
@@ -6,6 +6,7 @@ import { sendEmailVerification, updateProfile } from 'firebase/auth';
 import Swal from 'sweetalert2';
 const Register = () => {
     const { createUser } = useAuth();
+    const navigate = useNavigate();
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
         console.log(data)
@@ -28,6 +29,7 @@ const Register = () => {
                                 }
                             })
                         });
+                    navigate('/');
                 }).catch((error) => {
                     console.log('user update', error.message);
                 });
