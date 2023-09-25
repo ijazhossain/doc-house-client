@@ -19,7 +19,6 @@ const BookingModal = ({ treatment, date, setTreatment }) => {
             patientName: user?.displayName,
             patient: user?.email,
             phone
-
         }
 
         fetch('http://localhost:5000/booking', {
@@ -32,10 +31,12 @@ const BookingModal = ({ treatment, date, setTreatment }) => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
-                if (data.insertedId) {
-                    setTreatment(null)
-                    toast('Your Booking has been confirmed')
+                if (data.success && data.result.insertedId) {
+                    toast.success(`Appointment is set ${formattedDate} at ${slot}`)
+                } else {
+                    toast.error(`Already have an appointment ${formattedDate} at ${slot}`)
                 }
+                setTreatment(null)
             })
 
     }
