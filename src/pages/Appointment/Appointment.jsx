@@ -6,15 +6,16 @@ import BookingModal from "./BookingModal";
 const Appointment = () => {
     const [date, setDate] = useState(new Date());
     const [appointments, setAppointments] = useState([]);
-    const [treatment, setTreatment] = useState(null)
+    const [treatment, setTreatment] = useState(null);
+    const formattedDate = format(date, 'PP');
     useEffect(() => {
-        fetch('http://localhost:5000/appointments')
+        fetch(`http://localhost:5000/available?date=${formattedDate}`)
             .then(res => res.json())
             .then(data => {
                 // console.log(data);
                 setAppointments(data)
             })
-    }, [])
+    }, [formattedDate])
     return (
         <div>
             <AppointmentBanner date={date} setDate={setDate}></AppointmentBanner>

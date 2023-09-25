@@ -20,7 +20,7 @@ const BookingModal = ({ treatment, date, setTreatment }) => {
             patient: user?.email,
             phone
         }
-
+        console.log(bookings);
         fetch('http://localhost:5000/booking', {
             method: 'POST',
             headers: {
@@ -50,7 +50,7 @@ const BookingModal = ({ treatment, date, setTreatment }) => {
 
                 <h4 className="font-bold text-[28px] mb-[30px]">{name}</h4>
                 <form onSubmit={handleFormSubmit} className='flex flex-col gap-[23px]'>
-                    <input className='w-full border border-[#CFCFCF] py-[13px] px-[11px] rounded-[10px] bg-[#E6E6E6]' type="text" defaultValue={date} readOnly />
+                    <input className='w-full border border-[#CFCFCF] py-[13px] px-[11px] rounded-[10px] bg-[#E6E6E6]' type="text" defaultValue={formattedDate} readOnly />
                     <select name="slot" className='w-full border border-[#CFCFCF] py-[13px] px-[11px] rounded-[10px] bg-[#E6E6E6]'>
                         {slots?.map((slot, index) => <option
                             key={index}
