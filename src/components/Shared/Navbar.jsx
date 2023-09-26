@@ -68,6 +68,9 @@ const Navbar = () => {
                         <Link className='font-semibold text-lg' to='/appointment'>Appointment</Link>
                     </li>
                     <li>
+                        {user && <Link className='font-semibold text-lg' to='/dashboard/my-appointment'>Dashboard</Link>}
+                    </li>
+                    <li>
                         {user ? <Link onClick={handleLogout} className='font-semibold text-lg' to='/login'>Logout</Link> : <Link className='font-semibold text-lg' to='/login'>Login</Link>}
                     </li>
                 </ul>

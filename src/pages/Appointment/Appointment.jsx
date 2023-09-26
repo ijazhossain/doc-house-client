@@ -13,7 +13,7 @@ const Appointment = () => {
         queryKey: ['appointments', formattedDate],
         queryFn: async () => {
             const res = await fetch(`http://localhost:5000/available?date=${formattedDate}`)
-            const data = await res.json();
+            const data = res.json();
             return data;
         }
     })
