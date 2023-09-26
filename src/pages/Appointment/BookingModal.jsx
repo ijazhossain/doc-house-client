@@ -1,7 +1,7 @@
 import { format } from 'date-fns';
 import useAuth from '../../Hooks/useAuth';
 import { toast } from 'react-toastify';
-const BookingModal = ({ treatment, date, setTreatment }) => {
+const BookingModal = ({ treatment, date, setTreatment, refetch }) => {
     const { user } = useAuth()
     // console.log(treatment.name);
     const { _id, name, slots } = treatment;
@@ -32,6 +32,7 @@ const BookingModal = ({ treatment, date, setTreatment }) => {
             .then(data => {
                 console.log(data);
                 if (data.success && data.result.insertedId) {
+                    refetch()
                     toast.success(`Appointment is set ${formattedDate} at ${slot}`)
                 } else {
                     toast.error(`Already have an appointment ${formattedDate} at ${slot}`)

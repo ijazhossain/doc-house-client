@@ -1,21 +1,22 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import AppointmentBanner from "./AppointmentBanner";
 import { format } from 'date-fns';
 import AppointmentCard from "./AppointmentCard";
 import BookingModal from "./BookingModal";
+import { useQuery } from "@tanstack/react-query";
 const Appointment = () => {
     const [date, setDate] = useState(new Date());
-    const [appointments, setAppointments] = useState([]);
     const [treatment, setTreatment] = useState(null);
     const formattedDate = format(date, 'PP');
-    useEffect(() => {
-        fetch(`http://localhost:5000/available?date=${formattedDate}`)
-            .then(res => res.json())
-            .then(data => {
-                // console.log(data);
-                setAppointments(data)
-            })
-    }, [formattedDate])
+
+    const { data: appointments = [], refetch } = useQuery({
+        queryKey: ['appointments', formattedDate],
+        queryFn: async () => {
+            const res = await fetch(`http://localhost:5000/available?date=${formattedDate}`)
+            const data = await res.json();
+            return data;
+        }
+    })
     return (
         <div>
             <AppointmentBanner date={date} setDate={setDate}></AppointmentBanner>
@@ -36,6 +37,7 @@ const Appointment = () => {
                 date={date}
                 treatment={treatment}
                 setTreatment={setTreatment}
+                refetch={refetch}
             ></BookingModal>}
         </div>
     );
