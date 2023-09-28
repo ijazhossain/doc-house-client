@@ -3,19 +3,29 @@ import coverImg from '../../assets/login.png';
 import { useForm } from "react-hook-form";
 import useAuth from '../../Hooks/useAuth';
 import Swal from 'sweetalert2';
+import useToken from '../../Hooks/useToken';
+import { useEffect } from 'react';
 const Login = () => {
-    const { signIn } = useAuth();
+    const { user, signIn } = useAuth();
     const { register, handleSubmit, formState: { errors } } = useForm();
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
-    console.log(location);
+    // console.log(location);
+
+
+    const [token] = useToken(user);
+    useEffect(() => {
+        if (token) {
+            navigate(from, { replace: true });
+        }
+    }, [token, from, navigate])
     const onSubmit = data => {
         // console.log(data)
         signIn(data.email, data.password)
-            .then(() => {
-                // console.log(result.user)
-                navigate(from, { replace: true })
+            .then((result) => {
+                console.log(result.user)
+                // navigate(from, { replace: true })
                 Swal.fire({
                     position: 'top-end',
                     icon: 'success',

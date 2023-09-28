@@ -4,10 +4,18 @@ import { useForm } from "react-hook-form";
 import useAuth from '../../Hooks/useAuth';
 import { sendEmailVerification, updateProfile } from 'firebase/auth';
 import Swal from 'sweetalert2';
+import useToken from '../../Hooks/useToken';
+import { useEffect } from 'react';
 const Register = () => {
     const { createUser } = useAuth();
     const navigate = useNavigate();
     const { register, handleSubmit, formState: { errors } } = useForm();
+    const [token] = useToken();
+    useEffect(() => {
+        if (token) {
+            navigate('/');
+        }
+    }, [token])
     const onSubmit = data => {
         console.log(data)
         createUser(data.email, data.password)

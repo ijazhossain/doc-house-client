@@ -19,8 +19,8 @@ const Navbar = () => {
     };
     const handleLogout = () => {
         logOut()
+        localStorage.removeItem('accessToken')
             .then(() => {
-
             }).catch(error => {
                 console.log(error);
             })
