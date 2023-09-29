@@ -2,15 +2,23 @@ import { useQuery } from "@tanstack/react-query";
 import useAuth from "../../Hooks/useAuth";
 
 const MyAppointment = () => {
-    const { user } = useAuth();
+    const { user, loading } = useAuth();
+
     const { data: appointments = [] } = useQuery({
         queryKey: ['userAppointments', user],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/patient-appointments?email=${user.email}`)
+            const res = await fetch(`http://localhost:5000/patient-appointments?email=${user?.email}`, {
+                headers: {
+                    authorization: `BEAREER ${localStorage.getItem('accessToken')}`
+                }
+            })
             const data = await res.json()
             return data;
         }
     })
+    if (loading) {
+        return <h1>Loading...</h1>
+    }
     return (
         <div className="w-[90%] mx-auto mt-[19px] ">
             <h2 className="text-[24px] font-bold mb-[30px]" >My Appointments:  {appointments.length}</h2>
