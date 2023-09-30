@@ -2,12 +2,14 @@ import { Link } from 'react-router-dom';
 import logo from '../../assets/logo.png'
 import { useEffect, useState } from 'react';
 import useAuth from '../../Hooks/useAuth';
+import useAdmin from '../../Hooks/useAdmin';
 const Navbar = () => {
     const { user, logOut } = useAuth();
     const [navbarColor, setNavbarColor] = useState('bg-transparent');
     const [textColor, setTextColor] = useState('text-white');
 
-
+    const admin = useAdmin();
+    console.log(admin);
     const handleScroll = () => {
         if (window.scrollY > 0) {
             setNavbarColor('bg-white');

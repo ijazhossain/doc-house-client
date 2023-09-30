@@ -1,10 +1,14 @@
-import { useQuery } from "@tanstack/react-query";
+// import { useQuery } from "@tanstack/react-query";
 import useAuth from "../../Hooks/useAuth";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const MyAppointment = () => {
-    const { user, loading } = useAuth();
+    const { user, loading, logOut } = useAuth();
+    const [appointments, setAppointments] = useState([]);
+    const navigate = useNavigate();
 
-    const { data: appointments = [] } = useQuery({
+    /* const { data: appointments = [] } = useQuery({
         queryKey: ['userAppointments', user],
         queryFn: async () => {
             const res = await fetch(`http://localhost:5000/patient-appointments?email=${user?.email}`, {
@@ -13,15 +17,34 @@ const MyAppointment = () => {
                 }
             })
             const data = await res.json()
+            console.log(data);
             return data;
         }
-    })
+    }) */
+    useEffect(() => {
+        fetch(`http://localhost:5000/patient-appointments?email=${user?.email}`, {
+            method: 'GET',
+            headers: {
+                authorization: `BEAREER ${localStorage.getItem('accessToken')}`
+            }
+        })
+            .then(res => {
+                if (res.status === 401 || res.status === 403) {
+                    localStorage.removeItem('accessToken')
+                    logOut()
+                    navigate('/')
+
+                }
+                return res.json()
+            })
+            .then(data => setAppointments(data))
+    }, [user?.email])
     if (loading) {
         return <h1>Loading...</h1>
     }
     return (
         <div className="w-[90%] mx-auto mt-[19px] ">
-            <h2 className="text-[24px] font-bold mb-[30px]" >My Appointments:  {appointments.length}</h2>
+            <h2 className="text-[24px] font-bold mb-[30px]" >My Appointments:  {appointments?.length}</h2>
             <div className="overflow-x-auto">
                 <table className="table">
                     {/* head */}
@@ -39,7 +62,7 @@ const MyAppointment = () => {
                     <tbody>
                         {/* row 1 */}
                         {
-                            appointments.map((appointment, i) => <tr key={appointment._id}>
+                            appointments?.map((appointment, i) => <tr key={appointment._id}>
                                 <th>{i + 1}</th>
                                 <td>{appointment.treatment}</td>
                                 <td>{appointment.date}</td>

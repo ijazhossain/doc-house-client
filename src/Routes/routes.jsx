@@ -11,6 +11,8 @@ import Register from "../pages/Login/Register";
 import PrivateRoutes from "./PrivateRoutes"
 import DashboardLayout from "../Layouts/DashboardLayout";
 import MyAppointment from "../pages/Dashboard/MyAppointment";
+import AllUsers from "../pages/Dashboard/AllUsers";
+import AdminRoutes from "./AdminRoute";
 
 export const router = createBrowserRouter([
     {
@@ -63,6 +65,10 @@ export const router = createBrowserRouter([
             {
                 path: 'my-appointment',
                 element: <MyAppointment></MyAppointment>
+            },
+            {
+                path: 'allUsers',
+                element: <AdminRoutes><AllUsers></AllUsers></AdminRoutes>
             }
         ]
     }
