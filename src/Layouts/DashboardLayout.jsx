@@ -3,9 +3,9 @@ import useAdmin from "../Hooks/useAdmin";
 
 const DashboardLayout = () => {
     const [admin] = useAdmin();
-    console.log(admin);
+    // console.log(admin);
     return (
-        <div className="drawer lg:drawer-open">
+        <div className="drawer lg:drawer-open bg-[#f1f5f9]">
             <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content flex flex-col 
             ">
@@ -15,10 +15,11 @@ const DashboardLayout = () => {
             </div>
             <div className="drawer-side">
                 <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-                <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
+                <ul className="menu p-4 w-80 min-h-full bg-[#FFF] text-base-content">
                     {/* Sidebar content here */}
-                    <li><Link to='/dashboard/my-appointment'>My Appointment</Link></li>
                     {admin && <li><Link to='/dashboard/allUsers'>All Users</Link></li>}
+                    <li><Link to='/dashboard/addDoctor'>Add a Doctor</Link></li>
+                    <li><Link to='/dashboard/myAppointment'>My Appointment</Link></li>
                     <li><Link to="/">Home</Link></li>
                 </ul>
 

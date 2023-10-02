@@ -13,6 +13,7 @@ import DashboardLayout from "../Layouts/DashboardLayout";
 import MyAppointment from "../pages/Dashboard/MyAppointment";
 import AllUsers from "../pages/Dashboard/AllUsers";
 import AdminRoutes from "./AdminRoute";
+import AddDoctor from "../pages/Dashboard/AddDoctor";
 
 export const router = createBrowserRouter([
     {
@@ -63,12 +64,16 @@ export const router = createBrowserRouter([
         element: <DashboardLayout></DashboardLayout>,
         children: [
             {
-                path: 'my-appointment',
+                path: 'myAppointment',
                 element: <MyAppointment></MyAppointment>
             },
             {
                 path: 'allUsers',
                 element: <AdminRoutes><AllUsers></AllUsers></AdminRoutes>
+            },
+            {
+                path: 'addDoctor',
+                element: <AddDoctor></AddDoctor>
             }
         ]
     }
