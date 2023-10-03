@@ -4,10 +4,10 @@ import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
 const AllUsers = () => {
-    const { user, logOut } = useAuth();
+    const { logOut } = useAuth();
     const navigate = useNavigate()
-    const makeAdmin = () => {
-        fetch(`http://localhost:5000/user/admin/${user?.email}`, {
+    const makeAdmin = (user) => {
+        fetch(`http://localhost:5000/user/admin/${user?._id}`, {
             method: 'PUT',
             headers: { authorization: `BEAREER ${localStorage.getItem('accessToken')}` },
         })
@@ -16,7 +16,7 @@ const AllUsers = () => {
                 console.log(data);
                 if (data.modifiedCount > 0) {
                     refetch(),
-                        toast(`${user.displayName} is admin now`)
+                        toast(`${user.email} is admin now`)
 
                 }
             })
@@ -68,7 +68,7 @@ const AllUsers = () => {
                                 <td>{user.email}</td>
 
                                 <td>
-                                    {user?.role === 'admin' ? 'ADMIN' : <button onClick={makeAdmin} className="bg-[#07332F] font-semibold px-[21px] py-[9px] rounded-[5px] text-[#FFF]" >Make Admin</button>}
+                                    {user?.role === 'admin' ? 'ADMIN' : <button onClick={() => makeAdmin(user)} className="bg-[#07332F] font-semibold px-[21px] py-[9px] rounded-[5px] text-[#FFF]" >Make Admin</button>}
                                 </td>
                                 <td>
                                     <button className="bg-[#07332F] font-semibold px-[21px] py-[9px] rounded-[5px] text-[#FFF]" >Make user</button>
