@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 const image_hosting_token = import.meta.env.VITE_IMAGE_UPLOAD_TOKEN;
 const AddDoctor = () => {
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors }, reset } = useForm();
     // console.log(image_hosting_token);
     const onSubmit = (data) => {
         // console.log(data);
@@ -36,6 +36,7 @@ const AddDoctor = () => {
                         .then(data => {
                             console.log(data);
                             if (data.insertedId) {
+                                reset();
                                 toast.success('New doctor added')
                             } else {
                                 toast.error('New doctor don not added')
@@ -83,7 +84,7 @@ const AddDoctor = () => {
                 <label className='text-xl font-semibold' htmlFor="password">Doctor&apos;s Photo</label>
                 <input {...register("image", { required: true })} type="file" className="block mt-[20px] mb-[20px] file-input file-input-bordered w-full max-w-xs" />
 
-                <input className='cursor-pointer p-4 bg-[#07332F] rounded-[10px] w-full mt-[20px] mb-[24px] text-white font-bold' type="submit" value="Create Account" />
+                <input className='cursor-pointer p-4 bg-[#07332F] rounded-[10px] w-full mt-[20px] mb-[24px] text-white font-bold' type="submit" value="Add Doctor" />
 
             </form>
         </div>
